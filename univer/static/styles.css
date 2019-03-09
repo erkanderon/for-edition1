@@ -1,5 +1,9 @@
 body{
-	font-size: 14px;
+	font-size: 16px;
     line-height: 21px;
-    font-family: OpenSans,Arial,sans-serif;
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+}
+ul{
+	font-size: 1em;
+	list-style: none;
 }
