@@ -43,6 +43,7 @@ ul{
 	width: 100%;
 }
 .navbar-default ul li.dropdown a{
+	padding-top: 12px;
 	padding-bottom: 10px;
 }
 .navbar-default ul li button{
@@ -61,5 +62,32 @@ ul{
 	margin: 0;
 	width: 100%;
 }
+.navbar-right .row .col-xs-12{
+	margin: 7px;
+}
 
+
+
+
+/* LOGIN MODAL */
+
+#login-modal .modal-body div, #login-modal .modal-body input{
+	margin: 10px 0px;
+}
+#login-modal .modal-body, .modal .modal-footer{
+	background: white;
+}
+#login-modal .modal-content{
+	background: transparent; 
+	box-shadow: none;
+	border: none;
+}
+#login-modal .close{
+	color: white;
+	opacity: 0.5;
+}
+#login-modal .close:hover{
+	color: white;
+	opacity: 1;
+}
 
