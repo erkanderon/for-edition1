@@ -90,4 +90,13 @@ ul{
 	color: white;
 	opacity: 1;
 }
+.owl-carousel img{
+	height: 100px;
+    width: 100px;
+    margin: auto;
+    width: auto !important;
+}
+#banner-advertisement-universities{
+	margin-top: 20px;
+}
 

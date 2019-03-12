@@ -3,7 +3,7 @@ from django.views import generic
 from .models import *
 from univer.forms import UserLoginForm
 from django.views.generic import View
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 
 
 
@@ -34,3 +34,12 @@ class HomePageView(generic.ListView):
 					return redirect('/')
 
 		return render(request, self.template_name, {'form': UserLoginForm})
+
+
+class LogoutView(View):
+
+	# display blank form
+	def get(self, request):
+		if self.request.user.is_authenticated:
+			logout(self.request)
+		return redirect('/')

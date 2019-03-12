@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 
+from homepage.views import *
+
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^', include('homepage.urls')),
+    url(r'^logout/$', LogoutView.as_view(), name='logout')
 ]

@@ -56,7 +56,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <p>
-                                            <a href="#" class="btn btn-danger btn-block">Logout</a>
+                                            <a href="/logout" class="btn btn-danger btn-block">Logout</a>
                                         </p>
                                     </div>
                                 </div>
@@ -102,17 +102,51 @@
 
 
 <!-- BODY -->
-
-<div class="container banner">
-	<div>
-		<img class="img img-responsive" src="{% static 'images/banner.jpg' %}">
+<section id="banner-welcome-visitors">
+	<div class="container banner">
+		<div>
+			<img class="img img-responsive" src="{% static 'images/banner.jpg' %}">
+		</div>
 	</div>
-</div>
-
-E Üniversite
+</section>
+<section id="banner-advertisement-universities">
+	<div class="owl-carousel owl-theme">
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-1.png' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-2.png' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-3.png' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-4.png' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-5.jpg' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-6.png' %}"></div>
+	    <div class="item"><img class="img img-responsive" src="{% static 'images/banner-uni-7.png' %}"></div>
+	</div>
+</section>
 
 <!-- BODY END -->
 
-
+<script>
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    animateOut: true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
+</script>
 {% include 'main/modals.html' %}
 {% endblock %}
