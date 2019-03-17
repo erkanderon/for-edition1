@@ -14,7 +14,7 @@
                 <div id="div-forms">
                 
                     <!-- Begin # Login Form -->
-                    <form id="login-form" method="POST">
+                    <form id="login-form" method="POST" action="/login/">
                         {% csrf_token %}
 		                <div class="modal-body">
 				    		<div id="div-login-msg">
@@ -43,3 +43,49 @@
 </div>
 
 <!-- LOGIN MODAL ENDS -->
+
+
+<!-- SIGN UP MODAL -->
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                    <img class="img img-responsive" id="img_logo" src="{% static 'images/ssslogo.png' %}" style="width: 80%;">
+                </div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form" method="POST" action="/signup/">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>
+                            {{ signup_form.as_p }}
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+            </div>
+        </div>
+</div>
+
+<!-- SIGN UP MODAL ENDS -->

@@ -22,5 +22,5 @@ from homepage.views import *
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^', include('homepage.urls')),
-    url(r'^logout/$', LogoutView.as_view(), name='logout')
+    url(r'^', include('authentication.urls')),
 ]
