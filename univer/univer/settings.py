@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'univer',
-    'homepage'
+    'homepage',
+    'model',
+    'authentication'
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .models import *
 from univer.forms import UserLoginForm, UserSignUpForm
 from django.views.generic import View
 from django.contrib.auth import login, authenticate, logout
