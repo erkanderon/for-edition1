@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'univer',
     'homepage',
     'model',
-    'authentication'
+    'authentication',
+    'search'
 ]
 
 MIDDLEWARE = [

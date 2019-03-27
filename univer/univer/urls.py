@@ -22,5 +22,6 @@ from homepage.views import *
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^', include('homepage.urls')),
+    url(r'^', include('search.urls')),
     url(r'^', include('authentication.urls')),
 ]

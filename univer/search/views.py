@@ -5,8 +5,8 @@ from univer.forms import UserLoginForm, UserSignUpForm
 
 
 
-class HomePageView(generic.ListView):
-	template_name = "homepage/homepage.html"
+class SearchPageView(generic.ListView):
+	template_name = "search/search.html"
 	signin_form = UserLoginForm
 	signup_form = UserSignUpForm
 
