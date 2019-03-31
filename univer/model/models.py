@@ -47,7 +47,7 @@ class Teacher(models.Model):
 	teacher_description = models.TextField(blank=True, null=True)
 	teacher_image = models.CharField(max_length=150)
 	teacher_popularity = models.IntegerField(choices = pop_status)
-	teacher_university = models.OneToOneField(University, on_delete=models.SET_NULL, null=True)
+	teacher_university = models.ForeignKey(University, on_delete=models.SET_NULL, null=True)
 
 	def __str__(self):
 		return self.teacher_title + ' ' +self.teacher_name + ' ' +self.teacher_surname

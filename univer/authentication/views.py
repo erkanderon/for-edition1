@@ -16,13 +16,16 @@ class LoginView(generic.ListView):
 	def get_queryset(self):
 		return None
 
+	def get(self,request):
+		return redirect('/')
+
 	def post(self, request):
 		form  = self.form_class(request.POST)
 
 		if form.is_valid():
 
-			username = form.cleaned_data['username']
-			password = form.cleaned_data['password']
+			username = form.cleaned_data['login_username']
+			password = form.cleaned_data['login_password']
 
 			user = authenticate(username=username, password = password)
 			
@@ -40,6 +43,9 @@ class SignUpView(generic.ListView):
 
 	def get_queryset(self):
 		return None
+
+	def get(self,request):
+		return redirect('/')
 
 	def post(self, request):
 		form  = self.form_class(request.POST)

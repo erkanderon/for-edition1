@@ -100,3 +100,121 @@ ul{
 	margin-top: 20px;
 }
 
+
+
+
+	
+/**** LAYOUT ****/
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px;
+    }
+}
+
+#course-card .media-heading{
+	font-size: 20px;
+    font-weight: 600;
+}
+
+#course-card .media-heading a{
+	color: rgba(0,0,0,.87) !important;
+	font-family: OpenSans,Arial,sans-serif
+}
+.tag-course {
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.1875rem 1.125rem;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    background-image: -moz-linear-gradient(90deg, #4fc1e9, #4a89dc);
+    background-image: -webkit-linear-gradient(90deg, #4fc1e9, #4a89dc);
+    background-image: linear-gradient(90deg, #4fc1e9, #4a89dc);
+}
+
+.rating-div{
+	border-right: 1px solid black;
+
+	display: inherit;
+    align-items: center;
+}
+.rating{
+	margin: 5px 0px;
+}
+.rating .fas{
+	color: #f6ba42;
+}
+.product-info{
+	align-items: center;
+	display: flex;
+    letter-spacing: 0.875px;
+}
+.product-info .rating{
+	margin-right: 12px;
+}
+.product-info .span{
+	margin-right: 12px;
+    font-weight: 700;
+    color: #000;
+}
+.product-info .enrollment{
+	padding-left: 12px;
+}
