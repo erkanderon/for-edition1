@@ -1,17 +1,30 @@
-from django_elasticsearch_dsl import DocType, Index
-from model.models import Course
+from django_elasticsearch_dsl import DocType, Index, fields
+from model.models import Course, University
 
 courses = Index('courses')
 
 
 @courses.doc_type
 class CourseDocument(DocType):
+	belongs_to = fields.ObjectField(properties={
+        'name': fields.TextField(),
+    })
 	class Meta:
 
 		model = Course
 
 		fields = [
-			'course_title',
-			'course_description',
-			'course_logo'
+			'title',
+			'description',
+			'status',
+			'price',
+			#'popularity',
+			'logo'
 		]
+		related_models = [University]
+
+	def get_queryset(self):
+		"""Not mandatory but to improve performance we can select related in one sql request"""
+		return super(CarDocument, self).get_queryset().select_related(
+		    'belongs_to'
+		)

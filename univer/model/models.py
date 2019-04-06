@@ -18,13 +18,13 @@ class University(models.Model):
 		(10, 'Five Star')
 	)
 
-	university_name = models.CharField(max_length=50)
-	university_description = models.TextField(null=True, blank=True)
-	university_logo = models.CharField(max_length=150)
-	university_popularity = models.IntegerField(choices=pop_status)
+	name = models.CharField(max_length=50)
+	description = models.TextField(null=True, blank=True)
+	logo = models.CharField(max_length=150)
+	popularity = models.IntegerField(choices=pop_status)
 
 	def __str__(self):
-		return self.university_name
+		return self.name
 
 class Teacher(models.Model):
 	# Course teachers
@@ -41,16 +41,16 @@ class Teacher(models.Model):
 		(10, 'Five Star')
 	)
 
-	teacher_title = models.CharField(max_length=20, null=True)
-	teacher_name = models.CharField(max_length=30)
-	teacher_surname = models.CharField(max_length=30)
-	teacher_description = models.TextField(blank=True, null=True)
-	teacher_image = models.CharField(max_length=150)
-	teacher_popularity = models.IntegerField(choices = pop_status)
-	teacher_university = models.ForeignKey(University, on_delete=models.SET_NULL, null=True)
+	title = models.CharField(max_length=20, null=True)
+	name = models.CharField(max_length=30)
+	surname = models.CharField(max_length=30)
+	description = models.TextField(blank=True, null=True)
+	image = models.CharField(max_length=150)
+	popularity = models.IntegerField(choices = pop_status)
+	university = models.ForeignKey(University, on_delete=models.SET_NULL, null=True)
 
 	def __str__(self):
-		return self.teacher_title + ' ' +self.teacher_name + ' ' +self.teacher_surname
+		return self.title + ' ' +self.name + ' ' +self.surname
 
 # === Models for Learning app ===
 
@@ -68,21 +68,21 @@ class Course(models.Model):
 		(2, 'Hide')
 	)
 
-	course_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-	course_title = models.CharField(max_length=100)
-	course_description = models.TextField(blank=True, null=True)
-	course_price = models.FloatField(default=29.99)
+	owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+	title = models.CharField(max_length=100)
+	description = models.TextField(blank=True, null=True)
+	price = models.FloatField(default=29.99)
 	price_currency = models.CharField(max_length=5, choices=price_currencies)
 	pub_date = models.DateField(auto_now_add=True)
-	course_status = models.IntegerField(choices=course_status)
-	course_teacher = models.ManyToManyField(Teacher, blank=True)
+	status = models.IntegerField(choices=course_status)
+	teacher = models.ManyToManyField(Teacher, blank=True)
 	belongs_to = models.ForeignKey(University, null=True, on_delete=models.SET_NULL)
-	course_logo = models.CharField(max_length=150, null=True)
+	logo = models.CharField(max_length=150, null=True)
 
 
 	'''def get_absolute_url(self):
 		return reverse('blog:post_detail', kwargs={'pk':self.pk})'''
 
 	def __str__(self):
-		return self.course_title
+		return self.title
 

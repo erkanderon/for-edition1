@@ -12,7 +12,7 @@
                         <div class="media">
                             <a class="pull-left" href="#" target="_parent" style=" margin-right: 20px;">
                             	<div style="max-width: 200px;">
-                            		<img alt="image" class="img-responsive" src="{{course.course_logo}}"></a>
+                            		<img alt="image" class="img-responsive" src="{{course.logo}}"></a>
                         		</div>
 
                             <div class="clearfix visible-sm"></div>
@@ -21,9 +21,9 @@
                                 <a href="#" target="_parent"></a>
 
                                 <h4 class="media-heading">
-                                  <a href="#" target="_parent">{{course.course_title}}</a></h4>
+                                  <a href="#" target="_parent">{{course.title}}</a></h4>
 
-                                <p class="hidden-xs">{{course.belongs_to}}</p>
+                                <p class="hidden-xs">{{course.belongs_to.name}}</p>
                                 <div class="tag-course">COURSE</div>
                                 <div class="row" style="margin: 10px 0px;">
                                 	<div class="product-info">
@@ -58,11 +58,6 @@
 		</div>
         {% endfor %}
 	</div>
-    <div class="row">
-        {% for course in courses %}
-            {{ course.course_description }}
-        {% endfor %}
-    </div>
 </div>
 
 

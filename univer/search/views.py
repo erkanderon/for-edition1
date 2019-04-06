@@ -25,7 +25,7 @@ def search(request):
 	q = request.GET.get('q')
 
 	if q:
-		courses = CourseDocument.search().query('match', course_description=q)
+		courses = CourseDocument.search().query('match', description=q)
 	else:
 		courses = ''
 	return courses
