@@ -5,12 +5,14 @@
 
 <div class="container" style="margin-top: 60px;">
 	<div class=row>
+
+        {% for course in courses %}
 		<div class="col-xs-12" id="course-card">
 			<div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
                         <div class="media">
                             <a class="pull-left" href="#" target="_parent" style=" margin-right: 20px;">
                             	<div style="max-width: 200px;">
-                            		<img alt="image" class="img-responsive" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera/topics/ml/large-icon.png?auto=format%2Ccompress&dpr=1&w=150&h=150&fit=fill&bg=FFF"></a>
+                            		<img alt="image" class="img-responsive" src="{{course.course_logo}}"></a>
                         		</div>
 
                             <div class="clearfix visible-sm"></div>
@@ -19,9 +21,9 @@
                                 <a href="#" target="_parent"></a>
 
                                 <h4 class="media-heading">
-                                  <a href="#" target="_parent">Machine Learning</a></h4>
+                                  <a href="#" target="_parent">{{course.course_title}}</a></h4>
 
-                                <p class="hidden-xs">Stanford University</p>
+                                <p class="hidden-xs">{{course.belongs_to}}</p>
                                 <div class="tag-course">COURSE</div>
                                 <div class="row" style="margin: 10px 0px;">
                                 	<div class="product-info">
@@ -54,6 +56,7 @@
                         </div>
                     </div><!-- End Listing-->
 		</div>
+        {% endfor %}
 	</div>
     <div class="row">
         {% for course in courses %}

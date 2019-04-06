@@ -76,6 +76,7 @@ class Course(models.Model):
 	pub_date = models.DateField(auto_now_add=True)
 	course_status = models.IntegerField(choices=course_status)
 	course_teacher = models.ManyToManyField(Teacher, blank=True)
+	belongs_to = models.ForeignKey(University, null=True, on_delete=models.SET_NULL)
 	course_logo = models.CharField(max_length=150, null=True)
 
 
