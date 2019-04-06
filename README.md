@@ -8,7 +8,3 @@
 	$> sudo docker-compose up
 
 Say Hello to Docker :)
-
-Whenever you push your code to remote
-
-	$> git push github master && git push origin master
