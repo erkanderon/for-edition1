@@ -56,9 +56,6 @@
 		</div>
 	</div>
     <div class="row">
-        <form method='GET'>
-            <input type="text" id="q" name="q" placeholder="Type Search">
-        </form>
         {% for course in courses %}
             {{ course.course_description }}
         {% endfor %}
