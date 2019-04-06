@@ -14,10 +14,14 @@
             <ul class="nav navbar-nav">
                 <li class="explore"><a href="#"><button class="ui primary button">Keşfet</button></a></li>
                 <li class="explore">
-            		<div class="ui icon input">
-				  		<input type="text" placeholder="Ne Öğrenmek İstersin?">
-				  		<i class="inverted circular search link icon"></i>
-					</div>
+            		
+				  		
+                        <form method='GET' action="/courses/" name='search_courses'>
+                            <div class="ui icon input">
+                                <input type="text" id="q" name="q" placeholder="Ne Öğrenmek İstersin?">
+                                <i class="inverted circular search link icon"></i>
+                            </div>
+                        </form>
 				</li>             
              </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -79,10 +83,12 @@
             <ul class="nav navbar-nav">
                 <li class="explore"><a href="#"><button class="ui primary button">Keşfet</button></a></li>
                 <li class="explore">
-            		<div class="ui icon input">
-				  		<input type="text" placeholder="Ne Öğrenmek İstersin?">
-				  		<i class="inverted circular search link icon"></i>
-					</div>
+            		<form method='GET' action="/courses/" name='search_courses'>
+                            <div class="ui icon input">
+                                <input type="text" id="q" name="q" placeholder="Ne Öğrenmek İstersin?">
+                                <i class="inverted circular search link icon"></i>
+                            </div>
+                        </form>
 				</li>             
              </ul>
             <div class="nav navbar-nav navbar-right">
@@ -94,3 +100,11 @@
     </div>
 </div>
 {% endif %}
+<script>
+    $( document ).ready(function() {
+        $("form .input .icon").click(function() {
+            var x = document.getElementsByName('search_courses');
+            x[0].submit();
+        });
+    });
+</script>

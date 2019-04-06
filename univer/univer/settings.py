@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'homepage',
     'model',
     'authentication',
-    'search'
+    'search',
+    'django_elasticsearch_dsl'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 ]
+
+ELASTICSEARCH_DSL ={
+    'default': {
+        'hosts': 'onlinelearningturkiye_elasticsearch_1:9200'
+    },
+}
