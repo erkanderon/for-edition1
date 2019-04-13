@@ -202,6 +202,9 @@ ul{
 .rating .fas{
 	color: #f6ba42;
 }
+.rating .far{
+    color: #f6ba42;
+}
 .product-info{
 	align-items: center;
 	display: flex;

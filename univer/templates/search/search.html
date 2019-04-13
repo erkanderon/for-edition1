@@ -24,33 +24,92 @@
                                   <a href="#" target="_parent">{{course.title}}</a></h4>
 
                                 <p class="hidden-xs">{{course.belongs_to.name}}</p>
-                                <div class="tag-course">COURSE</div>
+                                <div class="tag-course">{{course.tag}}</div>
                                 <div class="row" style="margin: 10px 0px;">
                                 	<div class="product-info">
                                 		<div class="rating-div">
 	                                		<div class="rating">
-	                                			<i class="fas fa-star" aria-hidden="true"></i>
-	                                			<i class="fas fa-star" aria-hidden="true"></i>
-	                                			<i class="fas fa-star" aria-hidden="true"></i>
-	                                			<i class="fas fa-star" aria-hidden="true"></i>
-	                                			<i class="fas fa-star-half-alt"></i>
+                                                {% if course.popularity %}
+                                                    {% if course.popularity == 1 %}
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 2 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 3 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 4 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>    
+                                                    {% elif course.popularity == 5 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>    
+                                                    {% elif course.popularity == 6 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 7 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 8 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="far fa-star"></i>
+                                                    {% elif course.popularity == 9 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    {% elif course.popularity == 10 %}
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                                    {% endif %}
+                                                {% endif %}
+                                                
 	                                		</div>
 	                                		<span class="span">
-	                                			4.9
+	                                			{{course.popularity}}
 	                                		</span>
-	                                		<span class="span">
+	                                		<!--<span class="span">
 	                                			(<span>97,913</span>)
-	                                		</span>
+	                                		</span>-->
 	                                	</div>
                                 		<div class="enrollment">
-                                			<strong>2.2M</strong> students
+                                			<strong>{{course.count_subscriber}}</strong> students
                                 		</div>
                                 	</div>
                                 </div>
                                 
                                 <div class="course-difficulty">
                                 	<i class="fas fa-signal"></i>
-                                	<span><strong>Mixed</strong></span>
+                                	<span><strong>{{course.level}}</strong></span>
                                 </div>
                             </div>
                         </div>

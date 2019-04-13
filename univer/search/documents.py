@@ -18,13 +18,16 @@ class CourseDocument(DocType):
 			'description',
 			'status',
 			'price',
-			#'popularity',
+			'popularity',
+			'count_subscriber',
+			'level',
+			'tag',
 			'logo'
 		]
-		related_models = [University]
+#		related_models = [University]
 
 	def get_queryset(self):
 		"""Not mandatory but to improve performance we can select related in one sql request"""
-		return super(CarDocument, self).get_queryset().select_related(
+		return super(CourseDocument, self).get_queryset().select_related(
 		    'belongs_to'
 		)
