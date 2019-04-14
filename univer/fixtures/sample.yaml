@@ -1,0 +1,118 @@
+- model: auth.User
+  pk: 2
+  fields:
+    username: 'ekoderon'
+    password: 'qwertyqwerty'
+- model: model.University
+  pk: 1
+  fields:
+    name: 'Stanford University'
+    description: 'Stanford is one of the biggest university in the world.'
+    logo: '/static/images/mugla.png'
+    popularity: 10
+- model: model.University
+  pk: 2
+  fields:
+    name: 'IBM'
+    description: 'IBM is one of the biggest company in the world.'
+    logo: '/static/images/mugla.png'
+    popularity: 10
+- model: model.Teacher
+  pk: 1
+  fields:
+    title: 'Senior React Dev'
+    name: 'Mert'
+    surname: 'Kahyaoğlu'
+    description: 'Born in 1993. Very intelligent person.'
+    image: '/static/images/enis.png'
+    popularity: 10
+    university: 2
+- model: model.Teacher
+  pk: 2
+  fields:
+    title: 'Senior Python Dev'
+    name: 'Erkan'
+    surname: 'Çetinkaya'
+    description: 'Born in 1993. Very intelligent person.'
+    image: '/static/images/enis.png'
+    popularity: 10
+    university: 2
+- model: model.Teacher
+  pk: 3
+  fields:
+    title: 'AI Professional'
+    name: 'Emre'
+    surname: 'Özgüroğlu'
+    description: 'Born in 1993. Very intelligent person.'
+    image: '/static/images/enis.png'
+    popularity: 10
+    university: 2
+- model: model.Course
+  pk: 1
+  fields:
+    owner: 2
+    title: 'Data Science'
+    description: 'Data Science is a artificial intelligence part'
+    price: 29.99
+    price_currency: 'TL'
+    pub_date: "2018-03-15"
+    status: 1
+    teacher: [1]
+    belongs_to: 2
+    count_subscriber: 0
+    level: 'Beginner'
+    popularity: 10
+    tag: 'Course'
+    logo: '/static/images/datascience.jpeg'
+
+- model: model.Course
+  pk: 2
+  fields:
+    owner: 2
+    title: 'Neural Networks'
+    description: 'Neural Networks is a artificial intelligence part'
+    price: 29.99
+    price_currency: 'TL'
+    status: 1
+    pub_date: "2018-03-15"
+    teacher: [1]
+    belongs_to: 1
+    count_subscriber: 0
+    level: 'Mixed'
+    popularity: 10
+    tag: 'Course'
+    logo: '/static/images/neuralnetworks.jpeg'
+- model: model.Course
+  pk: 3
+  fields:
+    owner: 2
+    title: 'Machine Learning'
+    description: 'Machine Learning is a artificial intelligence part'
+    price: 29.99
+    price_currency: 'TL'
+    status: 1
+    pub_date: "2018-03-15"
+    teacher: [1]
+    belongs_to: 1
+    count_subscriber: 0
+    level: 'Mixed'
+    popularity: 10
+    tag: 'Course'
+    logo: '/static/images/machinelearning.jpeg'
+- model: model.Course
+  pk: 4
+  fields:
+    owner: 2
+    title: 'How To Learn'
+    description: 'You will learn How To Learn part'
+    price: 29.99
+    price_currency: 'TL'
+    status: 1
+    pub_date: "2018-03-15"
+    teacher: [1]
+    belongs_to: 1
+    count_subscriber: 0
+    level: 'Hard'
+    popularity: 10
+    tag: 'Course'
+    logo: '/static/images/howtolearn.jpeg'
